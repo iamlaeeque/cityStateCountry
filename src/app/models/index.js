@@ -44,6 +44,15 @@ Object.keys(db).forEach((modelName) => {
   }
 });
 
+const addModel = async (model) => {
+  db[model.name] = model;
+
+  const validModelNames = Object.keys(Model);
+  console.log("Valid model names:", validModelNames);
+};
+
+db["addModel"] = addModel;
+
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
